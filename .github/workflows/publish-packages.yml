@@ -41,11 +41,14 @@ jobs:
       - name: Lint
         run: pnpm lint
 
-      - name: Test
-        run: pnpm test
+      - name: Run format
+        run: pnpm format
 
       - name: Build
         run: pnpm build
+
+      - name: Test
+        run: pnpm test
 
       - name: Create Changesets Pull Request or Trigger an npm Publish
         if: env.RELEASE_TYPE == 'regular'

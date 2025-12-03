@@ -53,10 +53,13 @@ runs:
         components: clippy
 
     - name: Setup Solana version environment variable
+      if: inputs.solana_version != ''
+      shell: bash
       run: |
         echo "SOLANA_VERSION=${{ inputs.solana_version }}" >> $GITHUB_ENV
 
     - name: Install Solana
+      if: inputs.solana_version != ''
       uses: solana-developers/github-actions/setup-all@v0.2.7
       with:
         solana_version: ${{ inputs.solana_version }}

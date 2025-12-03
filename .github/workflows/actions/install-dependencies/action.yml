@@ -52,6 +52,10 @@ runs:
         toolchain: ${{ env.TOOLCHAIN_LINT }}
         components: clippy
 
+    - name: Setup Solana version environment variable
+      run: |
+        echo "SOLANA_VERSION=${{ inputs.solana_version }}" >> $GITHUB_ENV
+
     - name: Install Solana
       uses: solana-developers/github-actions/setup-all@v0.2.7
       with:

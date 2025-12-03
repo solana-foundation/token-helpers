@@ -55,4 +55,4 @@ runs:
     - name: Install Solana
       uses: solana-developers/github-actions/setup-all@v0.2.7
       with:
-        version: ${{ inputs.solana_version }}
+        solana_version: ${{ inputs.solana_version }}
